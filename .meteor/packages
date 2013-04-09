@@ -8,3 +8,6 @@ insecure
 preserve-inputs
 coffeescript
 backbone
+underscore
+jquery
+accounts-ui

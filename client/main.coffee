@@ -13,6 +13,8 @@ formatText = (position) ->
 
 
 Meteor.startup ->
+  Backbone.history.start({pushState: true});
+  
   Session.set "location", "loading"
   Session.set "heading", "loading"
   getLocation()
