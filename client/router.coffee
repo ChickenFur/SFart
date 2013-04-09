@@ -3,7 +3,8 @@ sfartRouter = Backbone.Router.extend ({
     "admin": "admin"
   },
   admin: ->
-    console.log "Admin Page reached"
+    Session.set "admin", true
+    console.log "Rendering Admin Page"
 })
     
 Router = new sfartRouter;
