@@ -11,3 +11,6 @@ backbone
 underscore
 jquery
 accounts-ui
+accounts-base
+stylus
+accounts-password

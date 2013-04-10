@@ -1,4 +1,11 @@
 <template name="admin">
 <h1>SFart Admin Interface</h1>
 <div>{{loginButtons}}</div>
+{{#if loggedIN}}
+  {{> upload}}
+{{/if}}
+</template>
+
+<template name="upload">
+  <input type="file" id="file"/>
 </template>
