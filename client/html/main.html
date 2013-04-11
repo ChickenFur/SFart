@@ -6,12 +6,17 @@
 </body>
 
 <template name="main">
-  {{#unless adminURL}}
-    {{> theGallery}}
-  {{/unless}}
+  {{#if map}}
+    {{> map}}
+  {{/if}}
 
-  {{#if adminURL}}
+  {{#if admin}}
     {{> admin}}
   {{/if}}
+
+  {{#if compass}}
+    {{> compass}}
+  {{/if}}
+
 </template>
 

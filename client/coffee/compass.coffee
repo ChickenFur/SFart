@@ -1,7 +1,7 @@
 Template.location.location = -> 
     return Session.get "location"
 
-Template.compass.heading = ->
+Template.heading.heading = ->
     return Session.get "heading"
 
 getLocation = -> 
@@ -10,7 +10,8 @@ getLocation = ->
 formatText = (position) ->
   Session.set "location", "Lat: " + position.coords.latitude + " Lon: " + position.coords.longitude
 
-Meteor.startup ->
+
+Template.compass.rendered = ->
   Session.set "location", "loading"
   Session.set "heading", "loading"
   getLocation()

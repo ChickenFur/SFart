@@ -1,18 +1,14 @@
-<head>
-  <title>SFart</title>
-</head>
-
-<body>
+<template name="compass">
   {{> location}}
-  {{> compass}}
-</body>
+  {{> heading}}
+</template>
 
 <template name="location">
   <h1>Your Current Location:</h1>
   {{location}}
 </template>
 
-<template name="compass">
+<template name="heading">
   <h1>You are currently pointing:</h1>
   {{heading}}
 </template>
