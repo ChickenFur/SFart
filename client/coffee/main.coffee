@@ -18,5 +18,5 @@ Template.main.compass = ->
 
 Meteor.startup ->
   Backbone.history.start({pushState: true});
-  Session.set "path", "map"
+  
 
