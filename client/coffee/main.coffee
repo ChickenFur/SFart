@@ -16,6 +16,12 @@ Template.main.compass = ->
   else
     return false
 
+Template.main.item = ->
+  if Session.get("path") is "item"
+    return true
+  else
+    return false
+
 Meteor.startup ->
   Backbone.history.start({pushState: true});
   
