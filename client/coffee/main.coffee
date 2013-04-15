@@ -22,7 +22,11 @@ Template.main.item = ->
   else
     return false
 
+Template.main.rendered = ->
+  navigation = responsiveNav('#nav')
+
 Meteor.startup ->
   Backbone.history.start({pushState: true});
+  
   
 

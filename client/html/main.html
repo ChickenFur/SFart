@@ -1,12 +1,26 @@
 <head>
   <title>SFart</title>
-    <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhAx9EMuN-uZCUXK8a-2hhuGAScA4Q0Tg&sensor=true">
+  <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhAx9EMuN-uZCUXK8a-2hhuGAScA4Q0Tg&sensor=true">
   </script>
+ 
 </head>
 <body>
+  {{> nav}}
   {{> main}}
 </body>
+
+<template name="nav">
+  <div id="nav">
+      <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="/map">Compass</a></li>
+          <li><a href="#">Map</a></li>
+          <li><a href="#">About</a></li>
+      </ul>
+  </div>
+  <a href="#nav" id="toggle" aria-hidden="false">Menu</a>
+</template>
 
 <template name="main">
   {{#if map}}
@@ -25,4 +39,6 @@
     {{> item}}
   {{/if}}
 </template>
+
+
 

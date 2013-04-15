@@ -13,7 +13,10 @@ addArtMarker = (theLatLng, map, item) ->
       'click', 
       -> 
         Session.set "path", "item"
-        Template.item.id = -> item._id)
+        Session.set "item", item._id
+        Template.item.id = -> item._id
+        Template.item.title = -> item.title
+        Template.item.artist = -> item.artist )
   return
 
 initializeMap = ->
