@@ -1,5 +1,6 @@
 Template.map.rendered = ->
   initializeMap()
+  return
 
 
 addArtMarker = (theLatLng, map, item) ->
@@ -12,11 +13,10 @@ addArtMarker = (theLatLng, map, item) ->
       marker, 
       'click', 
       -> 
-        Session.set "path", "item"
         Session.set "item", item._id
-        Template.item.id = -> item._id
-        Template.item.title = -> item.title
-        Template.item.artist = -> item.artist )
+        Session.set "path", "item"
+        history.pushState({map: "map"}, "artItem", "/item/" + item._id)
+        )
   return
 
 initializeMap = ->
@@ -31,7 +31,6 @@ initializeMap = ->
   for item, i in items
     theLatLng = new google.maps.LatLng(item.lat, item.lon)
     addArtMarker theLatLng, map, item 
-
   return
 
 
