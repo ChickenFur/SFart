@@ -1,7 +1,33 @@
 /* CSS declarations go here */
-html { height: 100% }
-body { height: 100%; margin: 0; padding: 0 }
+* {
+  color: white;
+  margin: 0;
+  font-family: helvetica;
+}
+html { 
+  height: 100%; 
+  margin: 0;
+}
+body { 
+  height: 100%; 
+  margin: 0; 
+  padding: 0; 
+
+}
 #map-canvas { 
   height: 100%
 
+}
+
+.header{
+  background-color: #e76032;
+  text-align: center;
+  margin-top: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#itemInfo{
+  background-color: #1c647b;
+  margin: 4px 4px;
 }

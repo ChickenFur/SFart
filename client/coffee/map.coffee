@@ -27,12 +27,23 @@ initializeMap = ->
     }
   
   map = new google.maps.Map document.getElementById("map-canvas"), mapOptions
+  
   items = artItems.find().fetch()
-  for item, i in items
-    theLatLng = new google.maps.LatLng(item.lat, item.lon)
-    addArtMarker theLatLng, map, item 
+  
+
+  delay = (ms, func) -> setTimeout func, ms
+
+  addAllMarkers = -> 
+    for item, i in items
+      theLatLng = new google.maps.LatLng(item.lat, item.lon)
+      addArtMarker theLatLng, map, item 
+
+  delay 1000, addAllMarkers
+    
   return
 
+
+  
 
 
 

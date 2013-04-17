@@ -1,9 +1,19 @@
 <template name="item">
-<div>
-  Title = {{title}}
-  <br>
-  Artist = {{artist}}
-  <br>
-  <div
-</div>
+  
+    <div class="header" >{{title}} </div>
+    <div id="gallery">
+      images here
+    </div>
+    <div id="itemInfo">
+      <span id="itemSharing">Share: </span>
+      <h2>Artist</h2>
+      {{artist}}
+      <h2>Location</h2>
+      location here
+      <h2>Route:</h2>
+      <div id="mapToItem">
+        loading...
+      </div>
+    </div>
+
 </template>
