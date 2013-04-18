@@ -1,6 +1,5 @@
 Template.main.map = ->
   if Session.get("path") is "map"
-    console.log "returning true"
     return true
   else
     return false
@@ -22,8 +21,11 @@ Template.main.item = ->
   else
     return false
 
-Template.main.rendered = ->
-  navigation = responsiveNav('#nav')
+#this little statement here makes the back button work when 
+#leaving an item and going back to the map view
+window.onpopstate= ->
+  Session.set "path", window.location.pathname.slice(1)
+  
 
 Meteor.startup ->
   Backbone.history.start({pushState: true});

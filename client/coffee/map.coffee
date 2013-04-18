@@ -1,5 +1,11 @@
+Meteor.autosubscribe -> 
+  Meteor.subscribe("nearest", -122.416, 37.78)
+
+
+
 Template.map.rendered = ->
-  initializeMap()
+  if !@_rendered
+    initializeMap()
   return
 
 addArtMarker = (theLatLng, map, item) ->
@@ -17,7 +23,7 @@ addArtMarker = (theLatLng, map, item) ->
         history.pushState({map: "map"}, "artItem", "/item/" + item._id)
         )
   return
-
+#lat: latlong[1], lon: latlong[0]
 initializeMap = ->
   mapOptions = {
     center: new google.maps.LatLng( 37.78, -122.416)
@@ -25,9 +31,8 @@ initializeMap = ->
     mapTypeId: google.maps.MapTypeId.ROADMAP
     }
   map = new google.maps.Map document.getElementById("map-canvas"), mapOptions
-  items = artItems.find().fetch()
+  items = artItems.find({},{}).fetch()
   for item, i in items
-    theLatLng = new google.maps.LatLng(item.lat, item.lon)
+    theLatLng = new google.maps.LatLng(item.loc[1], item.loc[0])
     addArtMarker theLatLng, map, item 
-  
   return

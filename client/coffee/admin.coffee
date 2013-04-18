@@ -1,7 +1,9 @@
 Template.admin.loggedIN = ->
   if Meteor.user() is null
+    console.log "no one is logged in"
     return false
   else
+    console.log 
     return true
 Template.admin.rendered = ->
   if Meteor.user()
@@ -16,15 +18,14 @@ handleFileSelect = (evt) ->
     storeToDB artItems
   reader.readAsText(files[0])
   return
-
+#lat: latlong[1], lon: latlong[0]
 storeToDB = (items) ->
   for art in items
     latlong = art[2].split ","
     artItems.insert(
       artist: art[0], 
       size: art[1], 
-      lat: latlong[1],
-      lon: latlong[0],
+      loc :  [ parseFloat(latlong[0]),  parseFloat(latlong[1]) ],
       locDescription: art[3],
       medium: art[4],
       source: art[5],

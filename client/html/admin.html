@@ -1,9 +1,11 @@
 <template name="admin">
+<div id="adminContainer">
 <h1>SFart Admin Interface</h1>
 <div>{{loginButtons}}</div>
-{{#if loggedIN}}
+{{#if currentUser}}
   {{> upload}}
 {{/if}}
+</div>
 </template>
 
 <template name="upload">
