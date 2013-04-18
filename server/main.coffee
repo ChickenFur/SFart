@@ -5,3 +5,18 @@ Meteor.publish "nearArt", (lat, lng, limit) ->
     return artItems.find({ })
   else
     return artItems.find( { loc : { $near : [lng, lat] } })
+
+Meteor.methods({
+  length: ->
+    return artItems.find({}).fetch().length
+  })
+
+artItems.allow({
+  insert: ->
+    return true
+  update: ->
+    return true
+  remove: ->
+    return true
+   
+  })
