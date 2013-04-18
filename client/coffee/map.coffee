@@ -31,8 +31,13 @@ initializeMap = ->
     mapTypeId: google.maps.MapTypeId.ROADMAP
     }
   map = new google.maps.Map document.getElementById("map-canvas"), mapOptions
-  items = artItems.find({},{}).fetch()
-  for item, i in items
-    theLatLng = new google.maps.LatLng(item.loc[1], item.loc[0])
-    addArtMarker theLatLng, map, item 
+  google.maps.event.addListenerOnce(map, 'idle',  ->
+    itemsCursor = artItems.find({},{})
+    itemsCursor.limit = 50
+    items = itemsCursor.fetch()
+    for item, i in items
+      theLatLng = new google.maps.LatLng(item.loc[1], item.loc[0])
+      addArtMarker theLatLng, map, item 
+    return
+  )
   return
