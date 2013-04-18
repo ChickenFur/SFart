@@ -1,11 +1,11 @@
 Meteor.autosubscribe -> 
-  Meteor.subscribe("nearest", -122.416, 37.78)
-
+  Meteor.subscribe("nearArt", 37.78, -122.416, "")
 
 
 Template.map.rendered = ->
   if !@_rendered
     initializeMap()
+    
   return
 
 addArtMarker = (theLatLng, map, item) ->

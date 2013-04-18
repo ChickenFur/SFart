@@ -1,2 +1,2 @@
 artItems = new Meteor.Collection("artItems");
-NearestArt = new Meteor.Collection ("nearest");
+NearestArt = new Meteor.Collection("nearest");
