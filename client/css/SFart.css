@@ -29,32 +29,48 @@ body {
 
 #itemSummary{ 
   margin: 4px 4px;
+  height: 100%;
+  width: 98%;
 }
 #itemSharing{
   background-color: #1c647b;
   margin-bottom: 1px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  height: 10%;
+  padding: 10px 0px 10px 10px;
   /* Firefox */
+  display:-moz-box;
+  -moz-box-align:center;
+  /* Safari, Opera, and Chrome */
+  display:-webkit-box;
+  -webkit-box-align:center;
+}
+#itemSharing img{  
+  padding:0% 20px;
+}
+
+#itemSharing label{
+  margin-right: 5%;
   display:-moz-box;
   -moz-box-pack:center;
   -moz-box-align:center;
-
   /* Safari, Opera, and Chrome */
   display:-webkit-box;
   -webkit-box-pack:center;
   -webkit-box-align:center;
+
+
 }
-#itemSharing span img{
-  width:5%;
-}
-#itemSharing span {
-  position: relative;
-  margin-left: 5%;
-  margin-right: 2%;
-}
-#itemSharing label{
-  margin-left: 1%;
+#itemSharing div{
+  text-align: center;
+  display:-moz-box;
+  -moz-box-pack:center;
+  -moz-box-align:center;
+  /* Safari, Opera, and Chrome */
+  display:-webkit-box;
+  -webkit-box-pack:center;
+  -webkit-box-align:center;
+  margin:0% 5%;
+
 
 }
 #itemDetails{
