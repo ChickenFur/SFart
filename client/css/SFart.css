@@ -40,7 +40,7 @@ body {
 #itemSharing{
   background-color: #1c647b;
   margin-bottom: 1px;
-  min-height: 50px;
+  min-height: 120px;
   height: 10%;
   
   padding: 10px 0px 10px 10px;
@@ -76,8 +76,9 @@ body {
 
 }
 #itemDetails{
-  background-color: #1c647b;
   padding-left: 1%;
+  background-color: #1c647b;
+ 
 }
 
 #adminContainer{
@@ -112,24 +113,40 @@ body {
   background: radial-gradient(ellipse at center, rgba(244,244,244,1) 11%,rgba(183,183,183,1) 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#b7b7b7',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
-#itemSharing img{  padding:0px 160px;}
+
+#itemSharing img{ padding:0px 140px; width: 120px;}
+
 
 @media (max-width: 1680px){
- #itemSharing img{  padding:0px 100px;}
+ #itemSharing img{  padding:0px 100px;  width: 100px;}
+ #itemSharing{ min-height: 100px}
 }
 
 @media (max-width: 1480px){
- #itemSharing img{  padding:0px 60px;}
+ #itemSharing img{  padding:0px 60px;  width: 90px;}
+  #itemSharing{ min-height: 90px}
 }
 
 
 @media (max-width: 1280px){
- #itemSharing img{  padding:0px 60px;}
+ #itemSharing img{  padding:0px 60px; width: 80px;}
+ #itemSharing{ min-height: 80px}
 }
-@media (max-width: 1000px) {
-  #itemSharing img{  padding:0px 20px;}
+@media (max-width: 1024px) {
+  #itemSharing img{  padding:0px 20px;
+                     width: 70px;
+  }
+  #itemSharing{ min-height: 60px}
+}
+@media (max-width: 768px) {
+  #itemSharing img{  padding:0px 20px;
+                     width: 70px;
+  }
+  #itemSharing{ min-height: 60px}
 }
 @media (max-width: 500px){
-  #itemSharing img{  padding:0px 5px;}
+  #itemSharing img{  padding:0px 5px;
+                      width: 50px;}
+  #itemSharing{ min-height: 50px}
 
 }
