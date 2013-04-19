@@ -51,9 +51,7 @@ body {
   display:-webkit-box;
   -webkit-box-align:center;
 }
-#itemSharing img{  
-  margin: 0% 5px;
-}
+
 
 #itemSharing label{
   margin-right: 1%;
@@ -113,4 +111,25 @@ body {
   background: -ms-radial-gradient(center, ellipse cover, rgba(244,244,244,1) 11%,rgba(183,183,183,1) 100%); /* IE10+ */
   background: radial-gradient(ellipse at center, rgba(244,244,244,1) 11%,rgba(183,183,183,1) 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#b7b7b7',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+#itemSharing img{  padding:0px 160px;}
+
+@media (max-width: 1680px){
+ #itemSharing img{  padding:0px 100px;}
+}
+
+@media (max-width: 1480px){
+ #itemSharing img{  padding:0px 60px;}
+}
+
+
+@media (max-width: 1280px){
+ #itemSharing img{  padding:0px 60px;}
+}
+@media (max-width: 1000px) {
+  #itemSharing img{  padding:0px 20px;}
+}
+@media (max-width: 500px){
+  #itemSharing img{  padding:0px 5px;}
+
 }
