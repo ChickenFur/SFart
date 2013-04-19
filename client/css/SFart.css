@@ -12,6 +12,7 @@ body {
   height: 100%; 
   margin: 0; 
   padding: 0; 
+  width: 100%;
 
 }
 #map-canvas { 
@@ -25,17 +26,23 @@ body {
   margin-top: 0px;
   padding-top: 10px;
   padding-bottom: 10px;
+  margin-bottom: 1%;
 }
 
-#itemSummary{ 
-  margin: 4px 4px;
+.itemContainer{
   height: 100%;
-  width: 98%;
+}
+#itemSummary{ 
+  margin: 2% 2%;
+  height: 100%;
+  
 }
 #itemSharing{
   background-color: #1c647b;
   margin-bottom: 1px;
+  min-height: 50px;
   height: 10%;
+  
   padding: 10px 0px 10px 10px;
   /* Firefox */
   display:-moz-box;
@@ -45,11 +52,11 @@ body {
   -webkit-box-align:center;
 }
 #itemSharing img{  
-  padding:0% 20px;
+  margin: 0% 5px;
 }
 
 #itemSharing label{
-  margin-right: 5%;
+  margin-right: 1%;
   display:-moz-box;
   -moz-box-pack:center;
   -moz-box-align:center;
@@ -57,8 +64,6 @@ body {
   display:-webkit-box;
   -webkit-box-pack:center;
   -webkit-box-align:center;
-
-
 }
 #itemSharing div{
   text-align: center;
@@ -71,10 +76,10 @@ body {
   -webkit-box-align:center;
   margin:0% 5%;
 
-
 }
 #itemDetails{
   background-color: #1c647b;
+  padding-left: 1%;
 }
 
 #adminContainer{
@@ -92,4 +97,20 @@ body {
   color: black;
   border-radius: 10px;
   padding: 10px;
+}
+
+#noPhotosMessage{
+  text-align: center;
+  margin: 0px 2%;
+  padding: 10%;
+  height: 10%;
+  color: black;
+  background: rgb(244,244,244); /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover, rgba(244,244,244,1) 11%, rgba(183,183,183,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(11%,rgba(244,244,244,1)), color-stop(100%,rgba(183,183,183,1))); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(244,244,244,1) 11%,rgba(183,183,183,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover, rgba(244,244,244,1) 11%,rgba(183,183,183,1) 100%); /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover, rgba(244,244,244,1) 11%,rgba(183,183,183,1) 100%); /* IE10+ */
+  background: radial-gradient(ellipse at center, rgba(244,244,244,1) 11%,rgba(183,183,183,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#b7b7b7',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }

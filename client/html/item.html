@@ -1,25 +1,28 @@
 <template name="item">
-  
+  <div class="itemContainer">
     <div class="header" >{{title}} </div>
-    <div id="gallery">
-      images here
-    </div>
+      {{#if galleryExists}}
+        {{>itemGallery}}
+      {{/if}}
+      {{#unless noPhotos}}
+         {{> noPhotos}}
+      {{/unless}}
     <div id="itemSummary">
       <div id="itemSharing">
         <label>Share: </label>
        
-          <img src="/icons/facebookWhite.svg">
+          <img id="fbIcon" src="/icons/facebookWhite.svg">
         
        
-          <img src="/icons/twitterWhite.svg">
+          <img id="twitterIcon" src="/icons/twitterWhite.svg">
         
-          <div>        
+          <div id="copyLinkIcon">        
           copy <br>link
           </div>
         
-          <img src="/icons/add.svg">
+          <img id="addIcon" src="/icons/add.svg">
                 
-          <img src="/icons/upArrow.svg">
+          <img id="expandRout" src="/icons/upArrow.svg">
         
       </div>
 
@@ -35,5 +38,17 @@
       </div>
 
     </div>
+  </div>
+</template>
 
+<template name="noPhotos">
+  <div id="noPhotosMessage">
+    We don't have a photo of this artwork yet.  Be the first to add one!
+  </div>
+</template>
+
+<template name="itemGallery">
+  <div id="itemGallery">
+      loading
+  </div>
 </template>
