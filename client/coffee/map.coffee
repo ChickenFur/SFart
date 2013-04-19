@@ -24,7 +24,7 @@ initializeMap = ->
       history.pushState({map: "map"}, "artItem", "/item/" + marker._id)
   
   google.maps.event.addListenerOnce map, 'idle',  ->
-    Session.set "mapReady", "true"
+    
     Meteor.autorun =>
       addArtMarkers() if not Session.get "loading"
   return
