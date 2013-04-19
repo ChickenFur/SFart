@@ -1,6 +1,12 @@
 Template.item.title = -> 
   item = artItems.find({_id: Session.get("item")}).fetch()[0]
-  return item.title
+  if item
+    return item.title
+  else
+    return "loading"
 Template.item.artist = -> 
   item = artItems.find({_id: Session.get("item")}).fetch()[0]
-  return item.artist
+  if item
+    return item.artist
+  else
+    return "loading"

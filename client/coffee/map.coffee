@@ -26,17 +26,7 @@ initializeMap = ->
   google.maps.event.addListenerOnce map, 'idle',  ->
     Session.set "mapReady", "true"
     Meteor.autorun =>
-      sub = Meteor.subscribe "nearArt", 
-                       Session.get("lat"), 
-                       Session.get("lng"), 
-                       Session.get("nearArtOnly"),
-      if sub.ready()
-        addArtMarkers()
-        Session.set "loading", false
-
-      else
-        Session.set "loading", true
-
+      addArtMarkers() if not Session.get "loading"
   return
 
 addArtMarkers = ->
