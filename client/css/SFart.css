@@ -27,9 +27,38 @@ body {
   padding-bottom: 10px;
 }
 
-#itemInfo{
-  background-color: #1c647b;
+#itemSummary{ 
   margin: 4px 4px;
+}
+#itemSharing{
+  background-color: #1c647b;
+  margin-bottom: 1px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* Firefox */
+  display:-moz-box;
+  -moz-box-pack:center;
+  -moz-box-align:center;
+
+  /* Safari, Opera, and Chrome */
+  display:-webkit-box;
+  -webkit-box-pack:center;
+  -webkit-box-align:center;
+}
+#itemSharing span img{
+  width:5%;
+}
+#itemSharing span {
+  position: relative;
+  margin-left: 5%;
+  margin-right: 2%;
+}
+#itemSharing label{
+  margin-left: 1%;
+
+}
+#itemDetails{
+  background-color: #1c647b;
 }
 
 #adminContainer{

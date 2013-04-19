@@ -4,16 +4,37 @@
     <div id="gallery">
       images here
     </div>
-    <div id="itemInfo">
-      <div id="itemSharing">Share: </div>
-      <h2>Artist</h2>
-      {{artist}}
-      <h2>Location</h2>
-      location here
-      <h2>Route:</h2>
-      <div id="mapToItem">
-        loading...
+    <div id="itemSummary">
+      <div id="itemSharing">
+        <label>Share: </label>
+        <span>
+          <img src="/icons/facebookWhite.svg">
+        </span>
+        <span>
+          <img src="/icons/twitterWhite.svg">
+        </span>
+        <span>
+          copy
+        </span>
+        <span>
+          <img src="/icons/add.svg">
+        </span>
+        <span>
+          <img src="/icons/upArrow.svg">
+        </span>
       </div>
+
+      <div id="itemDetails">
+        <h2>Artist</h2>
+        {{artist}}
+        <h2>Location</h2>
+        location here
+        <h2>Route:</h2>
+        <div id="mapToItem">
+          loading...
+        </div>
+      </div>
+
     </div>
 
 </template>
