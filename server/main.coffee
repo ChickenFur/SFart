@@ -1,10 +1,9 @@
-Meteor.publish "nearArt", (lat, lng, limit) ->
+Meteor.publish "nearArt", (lat, lng, nearArtOnly) ->
   artItems._ensureIndex({loc : "2d" })
-  #artItems.find({_id : "Ez6BvSXCKTCRS2pXG"})
-  if limit is "all"
-    return artItems.find({ })
-  else
+  if nearArtOnly
     return artItems.find( { loc : { $near : [lng, lat] } })
+  else
+    return artItems.find({ })
 
 Meteor.methods({
   length: ->
@@ -18,5 +17,4 @@ artItems.allow({
     return true
   remove: ->
     return true
-   
   })

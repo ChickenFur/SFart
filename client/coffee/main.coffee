@@ -29,6 +29,8 @@ window.onpopstate= ->
 
 Meteor.startup ->
   Backbone.history.start({pushState: true});
-  
+  Session.set "lat", 37.78
+  Session.set "lng", -122.416
+  Session.set "nearArtOnly", true
   
 

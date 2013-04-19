@@ -1,60 +1,60 @@
-# Meteor.autosubscribe -> 
-#   Meteor.subscribe("nearArt", 37.78, -122.416, "all", addArtMarkers)
-
-
 Template.map.rendered = ->
   if !@_rendered
     initializeMap()
   return
+Template.map.near = ->
+  console.log Session.get "nearArtOnly"
+  return Session.get "nearArtOnly"
 
-#lat: latlong[1], lon: latlong[0]
+Template.map.events
+  'click #showAll': (event) -> Session.set "nearArtOnly", false 
+      
+
 initializeMap = ->
-  mapOptions = {
+  mapOptions = 
     center: new google.maps.LatLng( 37.78, -122.416)
     zoom: 14
     mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
-
+    
   window.map = new google.maps.Map document.getElementById("map-canvas"), mapOptions
   window.oms = new OverlappingMarkerSpiderfier(map)
-  oms.addListener('click', (marker) -> 
+  oms.addListener 'click', (marker) -> 
       Session.set "item", marker._id
       Session.set "path", "item"
       history.pushState({map: "map"}, "artItem", "/item/" + marker._id)
-  )
-  google.maps.event.addListenerOnce(map, 'idle',  ->
+  
+  google.maps.event.addListenerOnce map, 'idle',  ->
     Session.set "mapReady", "true"
-    Meteor.subscribe("nearArt", 37.78, -122.416, "", addArtMarkers)
-    addArtMarkers()
-  )
+    Meteor.autorun =>
+      sub = Meteor.subscribe "nearArt", 
+                       Session.get("lat"), 
+                       Session.get("lng"), 
+                       Session.get("nearArtOnly"),
+      if sub.ready()
+        addArtMarkers()
+        Session.set "loading", false
+
+      else
+        Session.set "loading", true
+
   return
 
 addArtMarkers = ->
-  itemsCursor = artItems.find({},{})
-  #itemsCursor.limit = 50
-  items = itemsCursor.fetch()
+  items = artItems.find().fetch()
   console.log "Adding this many markers:", items.length 
   for item, i in items
     theLatLng = new google.maps.LatLng(item.loc[1], item.loc[0])
-    console.log "lat, long", item.loc[1] + " " + item.loc[0]
     addOneMarker theLatLng, map, item 
   return
 
 addOneMarker = (theLatLng, map, item) ->
-    marker = new google.maps.Marker(
-        position: theLatLng
-        map: map
-        title: item.title
-        )
-    marker._id = item._id
-    oms.addMarker(marker)
-    # google.maps.event.addListener(
-    #     marker, 
-    #     'click', 
-    #     -> 
-    #       Session.set "item", item._id
-    #       Session.set "path", "item"
-    #       history.pushState({map: "map"}, "artItem", "/item/" + item._id)
-    #       )
-    return
+  marker = new google.maps.Marker(
+      position: theLatLng
+      map: map
+      title: item.title
+      )
+  marker._id = item._id
+  oms.addMarker(marker)
+  return
+
 
