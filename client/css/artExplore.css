@@ -1,0 +1,46 @@
+/* CSS declarations go here */
+* {
+  color: white;
+  margin: 0;
+  font-family: helvetica;
+}
+html { 
+  height: 100%; 
+  margin: 0;
+}
+body { 
+  height: 100%; 
+  margin: 0; 
+  padding: 0; 
+  width: 100%;
+
+}
+#map-canvas { 
+  height: 100%
+
+}
+
+.header{
+  background-color: #e76032;
+  text-align: center;
+  margin-top: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 1%;
+}
+
+.button {
+  background-color: #1c647b;
+  width: 10em;
+  margin-left:auto;
+  margin-right: auto;
+  margin-bottom: 10%;
+  border-radius: .4em;
+  text-align: center;
+  padding: 1em;
+}
+.addArtContainer{
+  width: 100%;
+  margin-top: 15%;
+  text-align: center;
+}

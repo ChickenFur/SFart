@@ -10,21 +10,8 @@
  
 </head>
 <body>
-  
   {{> main}}
 </body>
-
-<template name="nav">
-  <div id="nav">
-      <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="/map">Compass</a></li>
-          <li><a href="#">Map</a></li>
-          <li><a href="#">About</a></li>
-      </ul>
-  </div>
-  <a href="#nav" id="toggle" aria-hidden="false">Menu</a>
-</template>
 
 <template name="main">
   {{#if map}}
@@ -42,6 +29,22 @@
   {{#if item}}
     {{> item}}
   {{/if}}
+
+  {{#if addPhotos}}
+    {{> addPhotos}}
+  {{/if}}
+</template>
+
+<template name="nav">
+  <div id="nav">
+      <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="/map">Compass</a></li>
+          <li><a href="#">Map</a></li>
+          <li><a href="#">About</a></li>
+      </ul>
+  </div>
+  <a href="#nav" id="toggle" aria-hidden="false">Menu</a>
 </template>
 
 

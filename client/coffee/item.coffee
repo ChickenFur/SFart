@@ -27,6 +27,9 @@ Template.item.rendered = ->
       initializeMap()
     return
 
+Template.item.events
+  'click #addIcon': (evemt) -> Session.set "path", "addPhotos"
+
 initializeMap = ->
   mapOptions = 
     center: new google.maps.LatLng( Session.get("lat"), Session.get("lng"))

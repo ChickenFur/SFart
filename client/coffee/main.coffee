@@ -38,6 +38,12 @@ Template.main.item = ->
       return false
   else
     return false
+
+Template.main.addPhotos = ->
+  if Session.get("path") is "addPhotos"
+    return true
+  else
+    return false
   
 #this little statement here makes the back button work when 
 #leaving an item and going back to the map view
