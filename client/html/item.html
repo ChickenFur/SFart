@@ -1,6 +1,6 @@
 <template name="item">
   <div class="itemContainer">
-    <div class="header" >{{title}} </div>
+      {{> itemHeader}}
       {{#if galleryExists}}
         {{>itemGallery}}
       {{/if}}
@@ -44,4 +44,8 @@
   <div id="itemGallery">
       loading
   </div>
+</template>
+
+<template name="itemHeader">
+  <div class="header" >{{title}} </div>
 </template>

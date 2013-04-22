@@ -1,6 +1,7 @@
 Template.addPhotos.events
   "click #takeAphoto" : -> launchCamera()
-
+  "click #chooseFile" : -> selectFile()
+  "click #cancel" : -> Session.set "path", "item"
 
 launchCamera = ->
   $('#photoTaken').hide()
@@ -21,6 +22,7 @@ launchCamera = ->
       $('#photoTaken').show()
       $('#photoOptions').show()
       $('#tryAgain').on('click', launchCamera)
+  
 
   video.addEventListener 'click', captureSnapShot, false
 
@@ -32,8 +34,12 @@ launchCamera = ->
     (stream) ->
       video.src = window.URL.createObjectURL(stream)
       localMediaStream = stream
-    onFailSoHard
 
+    onFailSoHard
+  
+
+selectFile = ->
+  $("#photoFileSelect").click()
   
 
 

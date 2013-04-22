@@ -39,35 +39,4 @@ body {
   text-align: center;
   padding: 1em;
 }
-.addArtContainer{
-  width: 100%;
-  margin-top: 15%;
-  text-align: center;
-}
 
-#takePhotoWindow{
-  width: 100%;
-  height:100%;
-  display: none;
-}
-#photoTaken{
-    width: 90%;
-    margin-left: 5%;
-    margin-top: 2%;
-  }
-
-#photoOptions{
-  display: none;
-  margin-top: 5%;
-  margin-left: auto;
-  margin-right: auto;
-
-  
-}
-#photoOptions .button{
-  margin-bottom: 2em;
-  display: inline-block;
-}
-#photoContainer{
-  width: 100%
-}

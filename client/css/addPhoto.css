@@ -1,0 +1,37 @@
+.addArtContainer{
+  width: 100%;
+  margin-top: 2%;
+  text-align: center;
+}
+
+#takePhotoWindow{
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  display: none;
+}
+#photoTaken{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+  }
+
+#photoOptions{
+  display: none;
+  margin-top: 5%;
+  margin-left: 7%;
+  
+}
+#photoOptions .button{
+  margin-bottom: 2em;
+  display: inline-block;
+  width: 5em;
+}
+#photoContainer{
+  width: 100%
+}
+
+#photoFileSelect{
+  display: none;
+}

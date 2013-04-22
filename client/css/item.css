@@ -108,14 +108,14 @@
  #itemSharing img{  padding:0px 60px; width: 80px;}
  #itemSharing{ min-height: 80px}
 }
-@media (max-width: 1020px) {
-  #itemSharing img{  padding:0px 20px;
+@media (max-width: 1024px) {
+  #itemSharing img{  padding:0px 40px;
                      width: 70px;
   }
   #itemSharing{ min-height: 65px}
 }
-@media (max-width: 760px) {
-  #itemSharing img{  padding:0px 20px;
+@media (max-width: 768px) {
+  #itemSharing img{  padding:0px 35px;
                      width: 70px;
   }
   #itemSharing{ min-height: 60px}

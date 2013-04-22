@@ -1,4 +1,4 @@
-Template.item.title = -> 
+Template.itemHeader.title = -> 
   item = artItems.find({_id: Session.get("item")}).fetch()[0]
   if item
     return item.title
