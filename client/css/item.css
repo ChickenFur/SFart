@@ -112,7 +112,7 @@
   #itemSharing img{  padding:0px 20px;
                      width: 70px;
   }
-  #itemSharing{ min-height: 60px}
+  #itemSharing{ min-height: 65px}
 }
 @media (max-width: 760px) {
   #itemSharing img{  padding:0px 20px;

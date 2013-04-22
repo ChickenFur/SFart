@@ -1,15 +1,18 @@
 <template name="addPhotos">
-  <video autoplay id="takePhotoWindow"></video>
-  <canvas style="display:none;" ></canvas>
-  <img id="photoTaken"/>
+  <div id="photoContainer">
+    <video autoplay id="takePhotoWindow"></video>
+    <canvas style="display:none;" ></canvas>
+    <img id="photoTaken"/>
 
-  <span id="photoOptions">
-    <div class="button" id="upload">It's Good Upload Now!</div>
-    <div class="button" id="tryAgain">It sucks, try again.</div>
-
-  </span>
+    <div id="photoOptions">
+      <div class="button" id="cropPhoto">Crop</div>
+      <div class="button" id="upload">Looks Good!</div>
+      <div class="button" id="tryAgain">Retake</div>
+    </div>
+  </div>
 
   <div class = "addArtContainer">
+
 
     <div id="takeAphoto" class="button">
       Take A Photo

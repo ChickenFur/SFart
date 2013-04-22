@@ -2,10 +2,6 @@ Template.addPhotos.events
   "click #takeAphoto" : -> launchCamera()
 
 
-
-
-
-
 launchCamera = ->
   $('#photoTaken').hide()
   $('#photoOptions').hide()
@@ -20,7 +16,7 @@ launchCamera = ->
   captureSnapShot = ->
     if localMediaStream
       ctx.drawImage video, 0, 0
-      document.querySelector('img').src = canvas.toDataURL 'image/jpg'
+      document.querySelector('img').src = canvas.toDataURL 'image/webp'
       $("#takePhotoWindow").hide()
       $('#photoTaken').show()
       $('#photoOptions').show()

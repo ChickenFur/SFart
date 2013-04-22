@@ -51,9 +51,23 @@ body {
   display: none;
 }
 #photoTaken{
-    width: 50%;
-}
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 2%;
+  }
 
 #photoOptions{
   display: none;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+
+  
+}
+#photoOptions .button{
+  margin-bottom: 2em;
+  display: inline-block;
+}
+#photoContainer{
+  width: 100%
 }
