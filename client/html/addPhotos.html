@@ -1,4 +1,14 @@
 <template name="addPhotos">
+  <video autoplay id="takePhotoWindow"></video>
+  <canvas style="display:none;" ></canvas>
+  <img id="photoTaken"/>
+
+  <span id="photoOptions">
+    <div class="button" id="upload">It's Good Upload Now!</div>
+    <div class="button" id="tryAgain">It sucks, try again.</div>
+
+  </span>
+
   <div class = "addArtContainer">
 
     <div id="takeAphoto" class="button">
