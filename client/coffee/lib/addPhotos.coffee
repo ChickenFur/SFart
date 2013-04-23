@@ -11,8 +11,8 @@ launchCamera = ->
   canvas = document.querySelector('canvas');
   ctx = canvas.getContext('2d');
   localMediaStream = null;
-  canvas.width = video.width
-  canvas.height = video.height
+  # canvas.width = video.width
+  # canvas.height = video.height
   onFailSoHard = (e)-> console.log "Video not loading: ", e
 
   captureSnapShot = ->

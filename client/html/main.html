@@ -14,6 +14,11 @@
 </body>
 
 <template name="main">
+  {{#if noPath}}
+    {{> placeHolder}}
+  {{/if}}
+
+
   {{#if map}}
     {{> map}}
   {{/if}}

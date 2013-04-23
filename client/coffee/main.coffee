@@ -13,6 +13,12 @@ Meteor.autorun =>
   else
     Session.set "loading", true
 
+Template.main.noPath = ->
+  if Session.get("path") is ""
+    return true
+  else
+    return false
+
 Template.main.map = ->
   if Session.get("path") is "map"
     return true
