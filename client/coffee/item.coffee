@@ -28,7 +28,12 @@ Template.item.rendered = ->
     return
 
 Template.item.events
-  'click #addIcon': (evemt) -> Session.set "path", "addPhotos"
+  'click #addIcon': (event) -> 
+    userAgent = window.navigator.userAgent
+    if ( userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) ) 
+      $("#photoFileSelect").click()
+    else
+      Session.set "path", "addPhotos"
 
 initializeMap = ->
   mapOptions = 

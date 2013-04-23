@@ -11,13 +11,14 @@ launchCamera = ->
   canvas = document.querySelector('canvas');
   ctx = canvas.getContext('2d');
   localMediaStream = null;
-
+  canvas.width = video.width
+  canvas.height = video.height
   onFailSoHard = (e)-> console.log "Video not loading: ", e
 
   captureSnapShot = ->
     if localMediaStream
-      ctx.drawImage video, 0, 0
-      document.querySelector('img').src = canvas.toDataURL 'image/webp'
+      ctx.drawImage video, 0, 0, canvas.width, canvas.height
+      document.querySelector('img').src = canvas.toDataURL 'image/png'
       $("#takePhotoWindow").hide()
       $('#photoTaken').show()
       $('#photoOptions').show()

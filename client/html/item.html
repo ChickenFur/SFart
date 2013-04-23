@@ -1,6 +1,8 @@
 <template name="item">
   <div class="itemContainer">
+
       {{> itemHeader}}
+
       {{#if galleryExists}}
         {{>itemGallery}}
       {{/if}}
@@ -8,6 +10,9 @@
          {{> noPhotos}}
       {{/unless}}
     <div id="itemSummary">
+
+      <input id="photoFileSelect" type="file" accept="image/*" >
+
       <div id="itemSharing">
         <label>Share: </label>   
           <img id="fbIcon" src="/icons/facebookWhite.svg">
@@ -19,6 +24,7 @@
           <img id="expandRout" src="/icons/upArrow.svg">
       </div>
       <div id="itemDetails">
+         
         <h2>Artist</h2>
         {{artist}}
         <h2>Location</h2>
@@ -26,7 +32,9 @@
         <h2>Route:</h2>
         <div id="mapToItem">
           loading...
+
         </div>
+
       </div>
     </div>
   </div>
